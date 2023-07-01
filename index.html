@@ -1,0 +1,179 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Best Practices for Content Management, Item Discoverability, and Search</title>
+    
+    <style>
+      html {
+          scroll-behavior: smooth;
+      }
+      main > nav {
+          position: sticky;
+          top: 1rem;
+          align-self: start;
+          font-size: 15.2px;
+      }
+      .section-nav li.active > a {
+          color: #333;
+          font-weight: 500;
+      }
+      .section-nav {
+          padding-left: 0;
+          border-left: 1px solid #efefef;
+          position: sticky;
+          top: 1rem;
+          align-self: start;
+          font-size: 10.2px;
+          height: 700px;
+          overflow-y: auto;
+      }
+      .section-nav a {
+          text-decoration: none;
+          display: block;
+          padding: 0.125rem 0;
+          color: rgb(177, 176, 176);
+          transition: all 50ms ease-in-out;
+      }
+      .section-nav a:hover,
+      .section-nav a:focus {
+          color: #666;
+      }
+      * {
+          box-sizing: border-box;
+      }
+      html,
+      body {
+          background: #fff;
+      }
+      body {
+          font-family: font-family: 'Avenir Next', Avenir Next;
+      }
+      nav ol {
+          list-style: none;
+          margin: 0;
+          padding: 0;
+      }
+      nav ul {
+          list-style: none;
+          margin: 0;
+          padding: 0;
+      }
+      li {
+          margin-left: 1rem;
+      }
+      h1 {
+          font-weight: 300;
+      }
+      main {
+          display: grid;
+          grid-template-columns: 1fr 18em;
+          max-width: 100em;
+          width: 95%;
+          margin: 0 auto;
+      }
+      section {
+          padding-bottom: 0.5rem;
+      }
+      h3 {
+          color: #8a8883;
+      }
+      h4 {
+        color: #50535A;
+        font-size: 1.2rem;
+        padding-top: 1.2rem;
+      }
+      b {
+          color: cadetblue;
+      }
+      figure, figcaption {
+          text-align: center;
+      }
+      table, th, td {
+
+          margin-left: auto;
+          margin-right: auto;
+          border: 1px solid #ddd;
+          padding: 5px;
+		  backgr ound-color: lightblue;
+      }
+      table {
+        width: 100%;
+      }
+      
+      .monday {
+        background-color: AliceBlue;
+        font-style: bold;
+      }
+	  
+	  .commas {
+	  background-color: lightyellow;
+	  }
+	  .swiss {
+	  color: maroon;
+	  
+	  }
+	  .spaces {
+	  color: RebeccaPurple;
+	  }
+	  .dots {
+	  color: DarkGreen;
+	  }
+    </style>
+  </head>
+  <body>
+    <script>
+      window.addEventListener("DOMContentLoaded", () => {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            const id = entry.target.getAttribute("id");
+            if (entry.intersectionRatio > 0) {
+              document
+                .querySelector(`nav li a[href="#${id}"]`)
+                .parentElement.classList.add("active");
+            } else {
+              document
+                .querySelector(`nav li a[href="#${id}"]`)
+                .parentElement.classList.remove("active");
+            }
+          });
+        });
+
+        // Track all sections that have an `id` applied
+        document.querySelectorAll("section[id]").forEach((section) => {
+          observer.observe(section);
+        });
+      });
+    </script>
+    <div class="Content">
+      <main>
+          <div class="main">
+
+              <h1 style="color: #426ccf;">Best Practices for Content Management, Item Discoverability, and Search - additional resources</h1>
+              <section id='introd'>
+                  <h2>Laura Busolo, Olga Serebryannaya</h2>
+					<ul>
+						<li>https://doc.arcgis.com/en/arcgis-online/reference/advanced-search.htm</li>
+						<li>https://doc.arcgis.com/en/arcgis-online/reference/search.htm</li>
+						<li>https://developers.arcgis.com/documentation/mapping-apis-and-services/content-management/</li>
+						<li>https://doc.arcgis.com/en/arcgis-online/administer/manage-items.htm</li>
+						<li>https://doc.arcgis.com/en/arcgis-online/manage-data/metadata.htm</li>
+						<li>https://community.esri.com/t5/metadata-catalogs-and-search-blog/introducing-the-metadata-editor-beta/ba-p/1304373/jump-to/first-unread-message</li>
+						<li>https://www.esri.com/training/catalog/5f8f153e026b7e47d1da2260/understanding-and-using-metadata-in-arcgis/</li>
+						<li>https://www.esri.com/training/catalog/5d93abcfea17287deea89a7c/locationenabling-data/</li>
+</li>
+                    
+					
+					</ul>
+
+                </section>
+
+
+              </section>
+          </div>
+
+      </main>
+  </div>
+  </body>
+</html>
